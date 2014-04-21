@@ -24,9 +24,9 @@ Load the plugin (remove tumblr tags if you load the plugin outside a tumblr temp
 		   	tags: '{block:Tags}{Tag},{/block:Tags}',
 		   	postID: {PostID}
 	    });
-    });
     {/block:Posts}
     {/block:HasTags}
+    });
     </script>
     
 Add little bit of html where related posts would be inserted:

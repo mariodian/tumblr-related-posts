@@ -20,7 +20,9 @@ $.fn.relatedPosts = function(options){
 		
 	tags.pop();
 	
-	// Remove duplicate objects by key
+	/**
+	*	Remove duplicate objects by key
+	**/
 	var removeDuplicatesByKey = function(list, key){
 		list.sort(function(a, b){ 
 			return a[key] - b[key];
@@ -39,6 +41,9 @@ $.fn.relatedPosts = function(options){
 		});
     }
 
+	/**
+	*	Prepare posts and display it
+	**/
 	var displayRelatedPosts = function(){
 		// Remove the current post from the list
 		postsList = postsList.filter(function(item){
@@ -112,6 +117,9 @@ $.fn.relatedPosts = function(options){
 		}
 	}
 
+	/**
+	* Get posts by tag
+	**/	
 	var getPosts = function(data){
 		var posts = data.response.posts;
 				

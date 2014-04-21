@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">	
+	<title>jQuery Tumblr Cloud Tag</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="./jquery.tumblr.related-posts.min.css">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="./jquery.tumblr.related-posts.js"></script>
+	
+<style>
+body {
+	font: 15px "Helvetica Neue", Arial, sans-serif;
+}
+pre {
+	border: 1px solid #ddd;
+	background: #eee;
+	padding: 10px;
+}
+#cloud-tag {
+	font-size: 18px;
+}
+</style>
+
+<script>
+
+$(document).ready(function(){
+	$('#related-posts').relatedPosts({
+        apiKey: 'kqWuMq6Ovt0TYksXA9moaXITM0ERw9ca4POCN1ErXyKDwOXIVq',
+        tumblrSite: 'mariodian-test.tumblr.com',
+        tags: 'south korea,travel,asia,',
+        maxPosts: 4
+    });
+});
+
+</script>
+	
+</head>
+
+<body>
+	<p>TumblrRelatedPosts is a simple plugin that let's you retrieve all posts by specified tags from your blog and display it in a list.</p>
+	
+	<p>It has no external dependencies other than jQuery.</p>
+	
+	<h2>Exampe</h2>
+	
+	<p><ul id="related-posts"></ul></p>
+	
+	<h2>How to Use</h2>
+	
+	<p>Include css inside a head element:</p>
+	
+	    <pre><code>&lt;link rel="stylesheet" href="jquery.tumblr.related-posts.min.css"&gt;</code></pre>
+	
+	<p>Include javascript inside a head element:</p>
+	
+	   <pre><code>&lt;script src="jquery.tumblr.related-posts.min.js"&gt;&lt;/script&gt;</code></pre>
+	
+	<p>Load the plugin (remove tumblr tags if you load the plugin outside a tumblr template):</p>
+	    
+	    <pre><code>&lt;script&gt;
+$(document).ready(function(){
+{block:Posts}
+{block:HasTags}
+	$('#related-posts').relatedPosts({
+		apiKey: 'your-api-key',
+		tumblrSite: 'your-blog.tumblr.com',
+		tags: '{block:Tags}{Tag},{/block:Tags}',
+		postID: {PostID}
+	});
+{/block:Posts}
+{/block:HasTags}
+});
+&lt;/script&gt;</code></pre>
+	    
+	<p>Add little bit of html where related posts would be inserted:</p>
+	
+	<pre><code>&lt;ul id="related-posts"&gt;&lt;/ul&gt;</code></pre>
+	    
+	<h2>Parameters</h2>
+	<p><b>apiKey</b> - your tumblr API key that you need to [register](http://www.tumblr.com/oauth/apps)</p>
+	
+	<p><b>tumblrSite</b> - link to your tumblr site e.g. mariodian.tumblr.com</p>
+	
+	<p><b>tags</b> - list of tumblr tags to find posts for. The order sets the tag priority, example: "south korea,asia,travel," means that posts will be sorted first by "south korea", than "asia".</p>
+	
+	<p><b>postID</b> - current post that will not be shown in the list</p>
+	
+	<p><b>maxPosts</b> [default: 5] - maximum number of related posts that will be displayed</p>
+	
+	<p><b>header</b> [default: 'Related posts'] - header for the box of related posts</p>
+	
+	<p><b>headerTag</b> [default: 'h3'] - html tag for header</p>
+	
+	<p><b>titleTag</b> [default: 'h4'] - html tag for post title</p>
+	
+	<p><b>showImage</b> [default: true] - parse a first img tag from post body and display it if it exists</p>
+	
+	<p><b>postLength</b> [default: 200] - number of characters of the post to be shown</p>
+	
+	<p><b>deleteOnEmpty</b> [default: true] - delete the whole box if no related posts have been found</p>
+	
+</body>
+    
+</html>

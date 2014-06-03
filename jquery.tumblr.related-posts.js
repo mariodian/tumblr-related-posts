@@ -159,18 +159,15 @@ $.fn.relatedPosts = function(options){
 			tempList = postsList.mergeSort(function(a, b){
 				if( a.tags[i] == tags[i] || b.tags[i] == a.tags[i] )
 				{
-					return 1;
+					return -1;
 				}
 				else
 				{
-					return -1;
+					return 1;
 				}
 			});
 		}
 
-		// Reverse the list
-		tempList.reverse();
-		
 		var postsCount = tempList.length;
 		
 		if( postsCount )

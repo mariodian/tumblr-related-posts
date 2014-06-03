@@ -5,9 +5,6 @@
  * Copyright (c) 2011, Justin Force
  * Licensed under the BSD 3-Clause License
  */
-
-/*jslint browser: true, indent: 2 */
-/*global jQuery */
 (function () {
 	'use strict';
 	

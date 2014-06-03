@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="./jquery.tumblr.related-posts.min.css">
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="./jquery.tumblr.related-posts.min.js"></script>
+	<script src="./jquery.tumblr.related-posts.js"></script>
 	
 <style>
 body {
@@ -19,9 +19,6 @@ pre {
 	background: #eee;
 	padding: 10px;
 }
-#cloud-tag {
-	font-size: 18px;
-}
 </style>
 
 <script>
@@ -30,7 +27,7 @@ $(document).ready(function(){
 	$('#related-posts').relatedPosts({
         apiKey: 'kqWuMq6Ovt0TYksXA9moaXITM0ERw9ca4POCN1ErXyKDwOXIVq',
         tumblrSite: 'mariodian-test.tumblr.com',
-        tags: 'south korea,travel,asia,',
+        tags: 'travel,asia,south korea,seoul,',
         maxPosts: 4
     });
 });

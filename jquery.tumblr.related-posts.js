@@ -240,7 +240,7 @@ $.fn.relatedPosts = function(options){
 	{	
 		$.ajax({
 			type: 'GET',
-			url: 'http://api.tumblr.com/v2/blog/' + settings.tumblrSite + '/posts',
+			url: 'https://api.tumblr.com/v2/blog/' + settings.tumblrSite + '/posts',
 			dataType: 'jsonp',
 			
 			data: {
